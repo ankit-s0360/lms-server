@@ -109,7 +109,6 @@ const login = async(req, res, next) => {
     
         const token = await user.generateJWTToken();
         user.password = undefined;
-    generateJWTToken
         res.cookie("token", token, cookieOptions);
            
         res.status(200).json({
