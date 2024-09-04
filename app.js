@@ -11,7 +11,7 @@ import errorMiddleware from "./middlewares/error.middleware.js";
 import miscellaneousRoutes from "./routes/miscellaneous.routes.js";
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Replace with your client origin
+    origin: process.env.FRONTEND_URL, // Replace with your client origin
     credentials: true, // Allow credentials
     methods: ['GET,POST,PUT,DELETE'],
     allowedHeaders: ['Content-Type, Authorization'],
@@ -32,7 +32,6 @@ app.use("/ping", (req, res) => {
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/courses", courseRoutes);
 app.use("/api/v1/payments", paymentRoutes);
-// app.use("/api/v1/contact", miscellaneousRoutes);
 app.use("/api/v1/admin", miscellaneousRoutes);
 
 

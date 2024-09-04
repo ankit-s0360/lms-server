@@ -13,7 +13,7 @@ import crypto from 'crypto'
 const cookieOptions = {
     maxAge: 7 * 24 * 60 * 60 * 1000,    // 7 days
     httpOnly:true,
-    Secure:true
+    Secure:true,
 }
 
 const register = async(req, res, next) => {
@@ -109,7 +109,7 @@ const login = async(req, res, next) => {
     
         const token = await user.generateJWTToken();
         user.password = undefined;
-    
+    generateJWTToken
         res.cookie("token", token, cookieOptions);
            
         res.status(200).json({
