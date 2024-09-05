@@ -13,10 +13,10 @@ import miscellaneousRoutes from "./routes/miscellaneous.routes.js";
 const corsOptions = {
     origin: process.env.FRONTEND_URL, // Replace with your client origin
     credentials: true, // Allow credentials
-    methods: ['GET,POST,PUT,DELETE'],
-    allowedHeaders: ['Content-Type, Authorization'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 };
-
+// 
 app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
